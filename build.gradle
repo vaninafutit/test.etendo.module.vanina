@@ -1,0 +1,58 @@
+/**
+*   This file was generated automatically by the 'createModuleBuild' task.
+*   Created at: 2024-03-28T14:49:52.518106Z.
+*
+*   WARNING: Do not put your credentials directly in this file.
+*
+*/
+
+group          = "test.etendo"
+version        = "1.0.0"
+description    = "Modulo de prueba description"
+ext.artifact   = "module.vanina"
+ext.repository = "https://maven.pkg.github.com/vaninafutit/test.etendo.module.vanina"
+
+configurations {
+    moduleDependencyContainer
+}
+
+publishing {
+    publications {
+        "test.etendo.module.vanina"(MavenPublication) {
+            from components.java
+            groupId    = group
+            artifactId = artifact
+            version    = version
+        }
+    }
+    repositories {
+        maven {
+            url "https://maven.pkg.github.com/vaninafutit/test.etendo.module.vanina"
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://maven.pkg.github.com/vaninafutit/test.etendo.module.vanina"
+    }
+    maven {
+        url "https://repo.futit.cloud/repository/maven-releases"
+    }
+    maven {
+        url "https://repo.futit.cloud/repository/maven-public-releases"
+    }
+    maven {
+        url "https://repo.futit.cloud/repository/maven-public-jars"
+    }
+}
+
+/**
+* Declare Java dependencies using 'implementation'
+* Ex: implementation "com.sun.mail:javax.mail:1.6.2"
+*/
+dependencies {
+  //implementation('com.etendoerp.platform:etendo-core:[22.1.0, x.y.z)')
+
+}
